@@ -1488,7 +1488,7 @@
             </div>
 
             <div id="formLogin" style="display: none;">
-                <form id="loginForm">
+                <form id="loginForm" action="/Login" method="post">
                     <div class="form-group">
                         <label for="loginEmail">E-mail</label>
                         <input type="email" class="form-control" id="loginEmail" name="loginEmail" required>
@@ -1643,6 +1643,9 @@
                         // Opcional: Alternar para login ou fechar modal
                         // alternarFormulario('login');
                         // fecharModal('modalLogin');
+
+                        document.getElementById('cadastroForm').submit(); // Envia o formulário
+
                         console.log("Usuário Cadastrado:", {
                             nome: nome.value,
                             email: email.value,

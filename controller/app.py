@@ -21,7 +21,7 @@ app = Flask(__name__, template_folder=template_dir)
 def home():
     return render_template('redeAmigo.html')
 
-@app.route("/", methods=['POST'])
+@app.route("/", methods=['GET','POST'])
 def s_cadastro():
     resultado_cadastro = salvar_cadastro()
     if "sucesso" in resultado_cadastro.lower():
