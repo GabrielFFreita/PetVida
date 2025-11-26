@@ -1,4 +1,4 @@
-from flask import request
+from flask import request, render_template
 from model.conexao_model import conexao 
 
 def salvar_cadastro():
@@ -18,15 +18,16 @@ def salvar_cadastro():
 
         # Verifica se já existe usuário ou funcionário com o mesmo nome
         sql_u = """
-            SELECT * FROM usuario WHERE nome = %s
+           SELECT email FROM usuario WHERE nome = %s
             UNION
-            SELECT * FROM funcionario WHERE nome = %s
+            SELECT email FROM funcionario WHERE nome = %s
+
         """
-        cursor.execute(sql_u, (nome, nome))
+        cursor.execute(sql_u, (email, email))
         usuario_existente = cursor.fetchone()
 
         if usuario_existente:
-            return "Erro no cadastro: Usuário já existe."
+            return render_template('redeAmigo.html', mensagem_erro="Erro no cadastro: email do usuário já existe.")
 
         # Valores para inserção
         vlrc = (nome, idade, telefone, email, senha) 
