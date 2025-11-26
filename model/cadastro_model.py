@@ -1,6 +1,6 @@
 from flask import request
 
-from conexao_model import conexao 
+from model.conexao_model import conexao 
 
 def salvar_cadastro():
    
