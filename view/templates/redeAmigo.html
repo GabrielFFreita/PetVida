@@ -1145,6 +1145,11 @@
                     <span>Carrinho</span>
                     <div class="contador-carrinho">3</div>
                 </div>
+                <div class="acao-cabecalho" style="position: relative;" onclick="abrirAdmin()" >
+                    <i class="fas fa-user-md"></i>
+                    <span>Painel Administrador</span>
+                    <div class="contador-carrinho"></div>
+                </div>
             </div>
         </div>
         
@@ -1531,6 +1536,9 @@
                 document.getElementById('cargo').value = ''; // Limpa o valor
             }
         }
+        function abrirAdmin() {
+  window.location.href = '/admin_page';
+}
 
         // --- Funções do Modal ---
 
